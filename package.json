@@ -1,6 +1,6 @@
 {
   "name": "@dlightjs/markit",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Markit for DLight",
   "author": {
     "name": "IanDx",
@@ -19,30 +19,30 @@
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "node ../../../common/scripts/tsupBabel.js",
+    "build": "node ./scripts/tsupBabel.js",
     "dev": "vite"
   },
   "devDependencies": {
-    "@babel/cli": "^7.22.6",
-    "@babel/core": "^7.20.12",
-    "@dlightjs/types": "^0.10.1",
-    "@typescript-eslint/eslint-plugin": "^5.59.7",
-    "babel-preset-dlight": "^0.10.1",
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@dlightjs/types": "^0.10.5",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "babel-preset-dlight": "^0.10.6",
     "babel-preset-easy-css": "0.10.14",
-    "eslint": "^8.41.0",
+    "eslint": "^8.51.0",
     "eslint-config-standard-with-typescript": "^34.0.1",
-    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
     "path": "^0.12.7",
-    "tsup": "^6.5.0",
-    "typescript": "^4.9.3",
-    "vite": "^4.4.9",
-    "vite-plugin-dlight": "^0.10.1"
+    "tsup": "^6.7.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.4.11",
+    "vite-plugin-dlight": "^0.10.6"
   },
   "dependencies": {
-    "@dlightjs/dlight": "^0.10.1",
+    "@dlightjs/dlight": "^0.10.2",
     "@iandx/easy-css": "0.10.14",
-    "@iandx/markit": "^0.1.5"
+    "@iandx/markit": "^0.1.6"
   }
 }
