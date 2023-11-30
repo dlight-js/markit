@@ -5,7 +5,7 @@ import BlockRenderer from "."
 import InlineRenderer from "../inlineView"
 
 interface UnorderedListProps {
-  ast: ContentProp<any>
+  ast: ContentProp
   props: any
 }
 @View

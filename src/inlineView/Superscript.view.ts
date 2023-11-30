@@ -4,7 +4,7 @@ import { css } from "@iandx/easy-css"
 import InlineRenderer from "."
 
 interface SuperscriptProps {
-  ast: ContentProp<any>
+  ast: ContentProp
 }
 @View
 class Superscript {

@@ -4,7 +4,7 @@ import { css } from "@iandx/easy-css"
 import InlineRenderer from "../inlineView"
 
 interface ParagraphProps {
-  ast: ContentProp<any>
+  ast: ContentProp
 }
 @View
 class Paragraph implements ParagraphProps {

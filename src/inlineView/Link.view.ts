@@ -4,7 +4,7 @@ import InlineRenderer from "."
 import { css } from "@iandx/easy-css"
 
 interface LinkProps {
-  ast: ContentProp<any>
+  ast: ContentProp
   props: any
 }
 

@@ -3,7 +3,7 @@ import { type Pretty, span, type Typed, type ContentProp } from "@dlightjs/types
 import { css } from "@iandx/easy-css"
 
 interface TextProps {
-  ast: ContentProp<any>
+  ast: ContentProp
 }
 @View
 class Text implements TextProps {

@@ -4,7 +4,7 @@ import { css } from "@iandx/easy-css"
 import BlockRenderer from "."
 
 interface BlockquoteProps {
-  ast: ContentProp<any>
+  ast: ContentProp
 }
 
 @View

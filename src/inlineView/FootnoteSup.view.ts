@@ -3,7 +3,7 @@ import { sup, a, type Typed, type Pretty, type ContentProp } from "@dlightjs/typ
 import { css } from "@iandx/easy-css"
 
 interface FootnoteSupProps {
-  ast: ContentProp<any>
+  ast: ContentProp
   props: any
 }
 @View

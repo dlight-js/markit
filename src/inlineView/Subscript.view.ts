@@ -4,7 +4,7 @@ import { css } from "@iandx/easy-css"
 import InlineRenderer from "."
 
 interface SubscriptProps {
-  ast: ContentProp<any>
+  ast: ContentProp
 }
 @View
 class Subscript implements SubscriptProps {

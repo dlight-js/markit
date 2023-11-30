@@ -3,7 +3,7 @@ import { type ContentProp, div, type Pretty, type Typed } from "@dlightjs/types"
 import { css } from "@iandx/easy-css"
 
 interface DividerProps {
-  ast: ContentProp<any>
+  ast: ContentProp
   props: any
 }
 @View

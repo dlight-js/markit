@@ -4,7 +4,7 @@ import { css } from "@iandx/easy-css"
 import InlineRenderer from "../inlineView"
 
 interface HeadingProps {
-  ast: ContentProp<any>
+  ast: ContentProp
   props: any
 }
 @View

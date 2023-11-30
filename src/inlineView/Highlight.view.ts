@@ -4,7 +4,7 @@ import InlineRenderer from "."
 import { css } from "@iandx/easy-css"
 
 interface HighlightProps {
-  ast: ContentProp<any>
+  ast: ContentProp
 }
 
 @View

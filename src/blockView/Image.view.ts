@@ -3,7 +3,7 @@ import { a, type ContentProp, div, img, type Pretty, type Typed } from "@dlightj
 import { css } from "@iandx/easy-css"
 
 interface ImageProps {
-  ast: ContentProp<any>
+  ast: ContentProp
   props: any
 }
 @View

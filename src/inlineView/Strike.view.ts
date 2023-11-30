@@ -4,7 +4,7 @@ import InlineRenderer from "."
 import { css } from "@iandx/easy-css"
 
 interface StrikeProps {
-  ast: ContentProp<any>
+  ast: ContentProp
 }
 @View
 class Strike implements StrikeProps {

@@ -5,7 +5,7 @@ import BlockRenderer from "."
 import InlineRenderer from "../inlineView"
 
 interface CheckListProps {
-  ast: ContentProp<any>
+  ast: ContentProp
   props: any
 }
 

@@ -4,7 +4,7 @@ import { css } from "@iandx/easy-css"
 import InlineRenderer from "."
 
 interface BoldProps {
-  ast: ContentProp<any>
+  ast: ContentProp
 }
 @View
 class Bold implements BoldProps {

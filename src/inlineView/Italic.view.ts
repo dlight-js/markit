@@ -4,7 +4,7 @@ import { css } from "@iandx/easy-css"
 import InlineRenderer from "."
 
 interface ItalicProps {
-  ast: ContentProp<any>
+  ast: ContentProp
 }
 @View
 class Italic implements ItalicProps {

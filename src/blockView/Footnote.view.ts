@@ -5,7 +5,7 @@ import Markit from "@iandx/markit"
 import InlineRenderer from "../inlineView"
 
 interface FootnoteProps {
-  ast: ContentProp<any>
+  ast: ContentProp
   props: any
 }
 @View

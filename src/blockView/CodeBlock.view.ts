@@ -3,7 +3,7 @@ import { type ContentProp, div, type Pretty, type Typed } from "@dlightjs/types"
 import InlineRenderer from "../inlineView"
 
 interface CodeBlockProps {
-  ast: ContentProp<any>
+  ast: ContentProp
   props: any
 }
 
