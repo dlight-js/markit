@@ -24,25 +24,26 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.23.4",
-    "@babel/core": "^7.23.5",
-    "@dlightjs/types": "^0.10.9",
+    "@babel/core": "^7.23.6",
+    "@dlightjs/types": "1.0.0-alpha.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "babel-preset-dlight": "^0.10.6",
+    "babel-preset-dlight": "1.0.0-alpha.7",
     "babel-preset-easy-css": "0.10.14",
-    "eslint": "^8.54.0",
+    "eslint": "^8.56.0",
     "eslint-config-standard-with-typescript": "^34.0.1",
-    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
     "path": "^0.12.7",
     "tsup": "^6.7.0",
     "typescript": "^4.9.5",
-    "vite": "^4.5.0",
-    "vite-plugin-dlight": "^0.10.6"
+    "vite": "^4.5.1",
+    "vite-plugin-dlight": "1.0.0-alpha.7"
   },
   "dependencies": {
-    "@dlightjs/dlight": "^0.10.2",
+    "@dlightjs/dlight": "1.0.0-alpha.11",
     "@iandx/easy-css": "0.10.14",
-    "@iandx/markit": "^0.1.6"
+    "@iandx/markit": "^0.1.6",
+    "clsx": "^2.0.0"
   }
 }

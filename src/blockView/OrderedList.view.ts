@@ -1,5 +1,5 @@
-import { Prop, required, View, Content } from "@dlightjs/dlight"
-import { type ContentProp, li, ol, type Pretty, type Typed } from "@dlightjs/types"
+import { View } from "@dlightjs/dlight"
+import { type ContentProp, li, ol, type Pretty, type Typed, Content, Prop, required } from "@dlightjs/types"
 import { css } from "@iandx/easy-css"
 import BlockRenderer from "."
 import InlineRenderer from "../inlineView"
@@ -10,19 +10,19 @@ interface OrderedListProps {
 }
 @View
 class OrderedList implements OrderedListProps {
-  @Prop @Content ast = required
+  @Content ast = required
 
   @Prop props = required
   start = this.props.start
 
-  Body() {
+  View() {
     ol()
       .start(this.start)
-      .className(this.dlightMarkitOrderedListOl$)
+      .class(this.dlightMarkitOrderedListOl$)
     {
       for (const { content, item: itemList } of this.ast) {
         li()
-          .className(this.dlightMarkitOrderedListLi$)
+          .class(this.dlightMarkitOrderedListLi$)
         {
           for (const item of itemList) {
             InlineRenderer[item.type](item.content)

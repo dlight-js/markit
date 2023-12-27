@@ -1,5 +1,5 @@
-import { Prop, View, required, Content } from "@dlightjs/dlight"
-import { type Pretty, span, type Typed, type ContentProp } from "@dlightjs/types"
+import { View } from "@dlightjs/dlight"
+import { type Pretty, span, type Typed, type ContentProp, Content, required } from "@dlightjs/types"
 import InlineRenderer from "."
 import { css } from "@iandx/easy-css"
 
@@ -8,11 +8,11 @@ interface StrikeProps {
 }
 @View
 class Strike implements StrikeProps {
-  @Prop @Content ast = required
+  @Content ast = required
 
-  Body() {
+  View() {
     span()
-      .className(this.dlightMarkitStrike$)
+      .class(this.dlightMarkitStrike$)
     {
       for (const content of this.ast) {
         InlineRenderer[content.type](content.content)

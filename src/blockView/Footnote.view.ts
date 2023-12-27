@@ -1,5 +1,5 @@
-import { Prop, View, required, Content } from "@dlightjs/dlight"
-import { a, div, type Pretty, span, type Typed, type ContentProp } from "@dlightjs/types"
+import { View } from "@dlightjs/dlight"
+import { a, div, type Pretty, span, type Typed, type ContentProp, Content, Prop, required } from "@dlightjs/types"
 import { css } from "@iandx/easy-css"
 import Markit from "@iandx/markit"
 import InlineRenderer from "../inlineView"
@@ -10,7 +10,7 @@ interface FootnoteProps {
 }
 @View
 class Footnote implements FootnoteProps {
-  @Prop @Content ast = required
+  @Content ast = required
 
   @Prop props = required
   noteName = this.props.noteName
@@ -21,20 +21,20 @@ class Footnote implements FootnoteProps {
   footNoteSubTrees: any = Markit.ast
     .findInlineItems("FootnoteSup", footnoteSup => footnoteSup.content === this.noteName)
 
-  Body() {
+  View() {
     div()
       .id(`Markit-Footnote-${this.noteName}-${this.footnoteIdx}`)
-      .className(this.dlightMarkitFootNoteWrap$)
+      .class(this.dlightMarkitFootNoteWrap$)
     {
       span(`[${this.noteName}] `)
-        .className(this.dlightMarkitNoteName$)
+        .class(this.dlightMarkitNoteName$)
       for (const content of this.ast) {
         InlineRenderer[content.type](content.content)
       }
       for (const footnoteSup of this.footNoteSubTrees) {
         a("↩")
           .href(`#Markit-FootnoteSup-${this.noteName}-${footnoteSup.props.footnoteSupId}`)
-          .className(this.dlightMarkitFootNote$)
+          .class(this.dlightMarkitFootNote$)
       }
     }
   }

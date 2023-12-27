@@ -1,6 +1,7 @@
-import { Prop, required, View, Content } from "@dlightjs/dlight"
-import { type ContentProp, div, type Pretty, type Typed } from "@dlightjs/types"
+import { View } from "@dlightjs/dlight"
+import { type ContentProp, div, type Pretty, type Typed, Content, Prop, required } from "@dlightjs/types"
 import { css } from "@iandx/easy-css"
+import clsx from "clsx"
 
 interface DividerProps {
   ast: ContentProp
@@ -8,15 +9,14 @@ interface DividerProps {
 }
 @View
 class Divider implements DividerProps {
-  @Prop @Content ast = required
+  @Content ast = required
 
   @Prop props = required
   dividerType = this.props.dividerType
 
-  Body() {
+  View() {
     div()
-      .className(this.dlightMarkitDivider$)
-      .className(this.dlightMarkitDivider$_(this.dividerType))
+      .class(clsx(this.dlightMarkitDivider$, this.dlightMarkitDivider$_(this.dividerType)))
   }
 
   dlightMarkitDivider$ = css`

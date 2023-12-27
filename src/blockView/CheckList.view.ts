@@ -1,5 +1,5 @@
-import { Prop, required, View, Content } from "@dlightjs/dlight"
-import { type ContentProp, div, input, type Pretty, type Typed } from "@dlightjs/types"
+import { View } from "@dlightjs/dlight"
+import { type ContentProp, div, input, type Pretty, type Typed, Content, Prop, required } from "@dlightjs/types"
 import { css } from "@iandx/easy-css"
 import BlockRenderer from "."
 import InlineRenderer from "../inlineView"
@@ -11,24 +11,24 @@ interface CheckListProps {
 
 @View
 class CheckList implements CheckListProps {
-  @Prop @Content ast = required
+  @Content ast = required
 
   @Prop props = required
   isChecked = this.props.isChecked
 
-  Body() {
+  View() {
     div()
-      .className(this.dlightMarkitCheckList$)
+      .class(this.dlightMarkitCheckList$)
     {
       for (const { item: itemList, content: contentList } of this.ast) {
         div()
-          .className(this.dlightMarkitCheckboxWrap$)
+          .class(this.dlightMarkitCheckboxWrap$)
         {
           input()
             .type("checkbox")
             .checked(this.isChecked)
             .disabled(true)
-            .className(this.dlightMarkitCheckbox$)
+            .class(this.dlightMarkitCheckbox$)
           for (const item of itemList) {
             InlineRenderer[item.type](item.content)
               .props(item.props)

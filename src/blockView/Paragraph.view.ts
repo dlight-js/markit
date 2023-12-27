@@ -1,5 +1,5 @@
-import { Prop, required, View, Content } from "@dlightjs/dlight"
-import { type ContentProp, div, type Pretty, type Typed } from "@dlightjs/types"
+import { View } from "@dlightjs/dlight"
+import { type ContentProp, div, type Pretty, type Typed, Content, required } from "@dlightjs/types"
 import { css } from "@iandx/easy-css"
 import InlineRenderer from "../inlineView"
 
@@ -8,11 +8,11 @@ interface ParagraphProps {
 }
 @View
 class Paragraph implements ParagraphProps {
-  @Prop @Content ast = required
+  @Content ast = required
 
-  Body() {
+  View() {
     div()
-      .className(this.dlightMarkitParagraph$)
+      .class(this.dlightMarkitParagraph$)
     {
       for (const content of this.ast) {
         InlineRenderer[content.type](content.content)

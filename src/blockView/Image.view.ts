@@ -1,5 +1,5 @@
-import { Prop, required, View, Content } from "@dlightjs/dlight"
-import { a, type ContentProp, div, img, type Pretty, type Typed } from "@dlightjs/types"
+import { View } from "@dlightjs/dlight"
+import { a, type ContentProp, div, img, type Pretty, type Typed, Content, Prop, required } from "@dlightjs/types"
 import { css } from "@iandx/easy-css"
 
 interface ImageProps {
@@ -8,7 +8,7 @@ interface ImageProps {
 }
 @View
 class Image implements ImageProps {
-  @Prop @Content ast = required
+  @Content ast = required
 
   @Prop props = required
   imageUrl = this.props.imageUrl
@@ -24,27 +24,27 @@ class Image implements ImageProps {
     right: "0px 0px 0px auto"
   }
 
-  Body() {
+  View() {
     div()
-      .className(this.dlightMarkitImageDiv$(this.alignment))
+      .class(this.dlightMarkitImageDiv$(this.alignment))
     {
       if (this.linkUrl) {
         a()
           .href(this.linkUrl)
-          .className(this.dlightMarkitImageA$)
+          .class(this.dlightMarkitImageA$)
         {
           img()
             .src(this.imageUrl)
             .alt(this.alt)
             .title(this.title)
-            .className(this.dlightMarkitImage$)
+            .class(this.dlightMarkitImage$)
         }
       } else {
         img()
           .src(this.imageUrl)
           .alt(this.alt)
           .title(this.title)
-          .className(this.dlightMarkitImage$)
+          .class(this.dlightMarkitImage$)
       }
     }
   }

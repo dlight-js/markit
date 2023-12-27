@@ -1,5 +1,5 @@
-import { Prop, View, required, Content } from "@dlightjs/dlight"
-import { type Pretty, sub, type Typed, type ContentProp } from "@dlightjs/types"
+import { View } from "@dlightjs/dlight"
+import { type Pretty, sub, type Typed, type ContentProp, required, Content } from "@dlightjs/types"
 import { css } from "@iandx/easy-css"
 import InlineRenderer from "."
 
@@ -8,11 +8,11 @@ interface SubscriptProps {
 }
 @View
 class Subscript implements SubscriptProps {
-  @Prop @Content ast = required
+  @Content ast = required
 
-  Body() {
+  View() {
     sub()
-      .className(this.dlightMarkitSubscript$)
+      .class(this.dlightMarkitSubscript$)
     {
       for (const content of this.ast) {
         InlineRenderer[content.type](content.content)

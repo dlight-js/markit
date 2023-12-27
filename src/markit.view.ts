@@ -1,5 +1,5 @@
-import { Content, Prop, View, required } from "@dlightjs/dlight"
-import { type Typed, div, type Pretty, ContentProp } from "@dlightjs/types"
+import { View } from "@dlightjs/dlight"
+import { type Typed, div, type Pretty, ContentProp, required, Content, Prop } from "@dlightjs/types"
 import BlockRenderer from "./blockView"
 import { parse } from "@iandx/markit"
 
@@ -10,7 +10,7 @@ interface MarkitProps {
 @View
 class MarkitView implements MarkitProps {
   /** @prop */
-  @Prop @Content ast = required
+  @Content ast = required
   @Prop getAst?: (data: any) => any
 
   /** @reactive */
@@ -18,7 +18,7 @@ class MarkitView implements MarkitProps {
   omitAst = this.getAst?.(this.markitAst)
 
   /** @view */
-  Body() {
+  View() {
     div()
     {
       for (const ast of this.markitAst) {
