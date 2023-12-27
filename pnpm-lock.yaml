@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@dlightjs/dlight':
-    specifier: 1.0.0-alpha.12
-    version: 1.0.0-alpha.12
+    specifier: 1.0.0-alpha.15
+    version: 1.0.0-alpha.15
   '@iandx/easy-css':
     specifier: 0.10.14
     version: 0.10.14(postcss@8.4.32)
@@ -319,8 +319,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@dlightjs/dlight@1.0.0-alpha.12:
-    resolution: {integrity: sha512-wwaocMkUw5pLBCfYcbmKqjon9db8KAvcXOECyOzDp2rDQT4mXI8rqFUhD2CH+5lNWIarm5yp8ERHwF/3Kfh3rw==}
+  /@dlightjs/dlight@1.0.0-alpha.15:
+    resolution: {integrity: sha512-xg7DRIrMAnNLF4Ur9AxIaatYoNdhBelxMxmRAECULrgkt0lFAc9yb6DsxrIru/xTerc0P2zszaWsLkuXrQbVhQ==}
     dev: false
 
   /@dlightjs/error-handler@1.0.0-alpha.0:

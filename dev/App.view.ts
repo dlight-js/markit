@@ -5,7 +5,7 @@ import { MarkitView } from "../src"
 @View
 class App {
   View() {
-    MarkitView("# okok\n## fine\n* hhh\n * apple")
+    MarkitView("")
   }
 }
 
