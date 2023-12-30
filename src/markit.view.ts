@@ -1,6 +1,6 @@
 import { parse } from "@iandx/markit"
 import { View } from "@dlightjs/dlight"
-import { type Typed, div, type Pretty, ContentProp, required, Content, Prop } from "@dlightjs/types"
+import { type Typed, div, type Pretty, ContentProp, required, Content, Prop, Watch } from "@dlightjs/types"
 import BlockRenderer from "./blockView"
 
 interface MarkitProps {

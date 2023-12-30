@@ -4,8 +4,13 @@ import { MarkitView } from "../src"
 
 @View
 class App {
+  content = "jj"
   View() {
-    MarkitView("")
+    button("click me")
+      .onClick(() => {
+        this.content += "clicked"
+      })
+    MarkitView(this.content)
   }
 }
 
