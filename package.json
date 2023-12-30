@@ -41,7 +41,7 @@
     "vite-plugin-dlight": "1.0.0-alpha.21"
   },
   "dependencies": {
-    "@dlightjs/dlight": "1.0.0-alpha.34",
+    "@dlightjs/dlight": "1.0.0-alpha.35",
     "@iandx/easy-css": "0.10.14",
     "@iandx/markit": "^0.1.6",
     "clsx": "^2.0.0"
