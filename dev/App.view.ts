@@ -1,16 +1,26 @@
 import { View } from "@dlightjs/dlight"
 import { type Typed, type Pretty } from "@dlightjs/types"
 import { MarkitView } from "../src"
+import { css } from "@emotion/css"
 
 @View
 class App {
-  content = "jj"
+  content = "jj \n# okk\n jfieaf`shit`"
   View() {
     button("click me")
       .onClick(() => {
         this.content += "clicked"
       })
-    MarkitView(this.content)
+    div()
+      .class(css`
+      .dlight-markit-code{
+        color: red;
+
+      }
+      
+      `); {
+      MarkitView(this.content)
+    }
   }
 }
 

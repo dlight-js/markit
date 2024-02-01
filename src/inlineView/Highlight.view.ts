@@ -1,7 +1,8 @@
 import { View } from "@dlightjs/dlight"
 import { type Pretty, span, type Typed, type ContentProp, Content, required } from "@dlightjs/types"
 import InlineRenderer from "."
-import { css } from "@iandx/easy-css"
+import { css } from "@emotion/css"
+import clsx from "clsx"
 
 interface HighlightProps {
   ast: ContentProp
@@ -13,7 +14,7 @@ class Highlight implements HighlightProps {
 
   View() {
     span()
-      .class(this.dlightMarkitHighlight$)
+      .class(clsx(this.dlightMarkitHighlight, "dlight-markit-highlight"))
     {
       for (const content of this.ast) {
         InlineRenderer[content.type](content.content)
@@ -21,7 +22,7 @@ class Highlight implements HighlightProps {
     }
   }
 
-  dlightMarkitHighlight$ = css`
+  dlightMarkitHighlight = css`
     background-color: yellow;
   `
 }

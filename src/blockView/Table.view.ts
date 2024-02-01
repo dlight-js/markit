@@ -1,7 +1,8 @@
 import { View } from "@dlightjs/dlight"
 import { table, th, tr, td, type Typed, type Pretty, type ContentProp, Content, Prop, required } from "@dlightjs/types"
-import { css } from "@iandx/easy-css"
+import { css } from "@emotion/css"
 import InlineRenderer from "../inlineView"
+import { clsx } from "clsx"
 
 interface TableProps {
   ast: ContentProp
@@ -17,15 +18,15 @@ class Table implements TableProps {
 
   View() {
     table()
-      .class(this.dlightMarkitTableStyle$)
+      .class(clsx(this.dlightMarkitTable, "dlight-markit-table"))
     {
       tr()
-        .class(this.dlightMarkitTableTrStyle$)
+        .class("dlight-markit-table-tr")
       {
         for (const [index, headerColumn] of this.ast[0].entries()) {
           for (const { type, content, props } of headerColumn) {
             th()
-              .class(this.dlightMarkitTableThStyle$(this.headerAligns[index]))
+              .class(clsx(this.dlightMarkitTableTh(this.headerAligns[index]), "dlight-markit-table-th"))
             {
               InlineRenderer[type](content)
                 .props(props)
@@ -35,12 +36,12 @@ class Table implements TableProps {
       }
       for (const cellRow of this.ast.slice(1)) {
         tr()
-          .class(this.dlightMarkitTableTrStyle$)
+          .class("dlight-markit-table-tr")
         {
           for (const [index, cellColumn] of cellRow.entries()) {
             for (const { type, content, props } of cellColumn) {
               td()
-                .class(this.dlightMarkitTableTdStyle$(this.rowAligns[index]))
+                .class(clsx(this.dlightMarkitTableTd(this.rowAligns[index]), "dlight-markit-table-td"))
               {
                 if (type) {
                   InlineRenderer[type](content)
@@ -54,19 +55,17 @@ class Table implements TableProps {
     }
   }
 
-  dlightMarkitTableStyle$ = css`
+  dlightMarkitTable = css`
     border-collapse: collapse;
   `
 
-  dlightMarkitTableTrStyle$ = css``
-
-  dlightMarkitTableThStyle$ = (align: string) => css`
+  dlightMarkitTableTh = (align: string) => css`
     border: solid 1px gray;
     padding: 5px;
     text-align: ${align};
   `
 
-  dlightMarkitTableTdStyle$ = (align: string) => css`
+  dlightMarkitTableTd = (align: string) => css`
     border: solid 1px gray;
     padding: 5px;
     text-align: ${align};

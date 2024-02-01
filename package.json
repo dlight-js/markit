@@ -1,6 +1,6 @@
 {
   "name": "@dlightjs/markit",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.8",
   "description": "Markit for DLight",
   "author": {
     "name": "IanDx",
@@ -42,8 +42,8 @@
   },
   "dependencies": {
     "@dlightjs/dlight": "1.0.0-alpha.35",
-    "@iandx/easy-css": "0.10.14",
+    "@emotion/css": "^11.11.2",
     "@iandx/markit": "^0.1.6",
-    "clsx": "^2.0.0"
+    "clsx": "^2.1.0"
   }
 }

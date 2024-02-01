@@ -1,6 +1,7 @@
 import { View } from "@dlightjs/dlight"
 import { sup, a, type Typed, type Pretty, type ContentProp, Content, Prop, required } from "@dlightjs/types"
-import { css } from "@iandx/easy-css"
+import { css } from "@emotion/css"
+import clsx from "clsx"
 
 interface FootnoteSupProps {
   ast: ContentProp
@@ -16,20 +17,18 @@ class FootnoteSup implements FootnoteSupProps {
   View() {
     a()
       .href(`#Markit-Footnote-${this.ast}-0`)
-      .class(this.dlightMarkitFootnoteSup$)
+      .class(clsx(this.dlightMarkitFootnoteSup, "dlight-markit-footnote-sup"))
     {
       sup(this.ast)
         .id(`Markit-FootnoteSup-${this.ast}-${this.footnoteSupId}`)
-        .class(this.dlightMarkitFootnoteSupSup$)
+        .class("dlight-markit-footnote-sup")
     }
   }
 
-  dlightMarkitFootnoteSup$ = css`
+  dlightMarkitFootnoteSup = css`
     color: gray;
     text-decoration: none;
   `
-
-  dlightMarkitFootnoteSupSup$ = css``
 }
 
 export default FootnoteSup as Pretty as Typed<FootnoteSupProps>

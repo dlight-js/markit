@@ -1,7 +1,8 @@
 import { View } from "@dlightjs/dlight"
 import { blockquote, Content, required, type ContentProp, type Pretty, type Typed } from "@dlightjs/types"
-import { css } from "@iandx/easy-css"
+import { css } from "@emotion/css"
 import BlockRenderer from "."
+import clsx from "clsx"
 
 interface BlockquoteProps {
   ast: ContentProp
@@ -13,7 +14,7 @@ class Blockquote implements BlockquoteProps {
 
   View() {
     blockquote()
-      .class(this.dlightMarkitBlockquoteStyle$)
+      .class(clsx(this.dlightMarkitBlockquote, "dlight-markit-blockquote"))
     {
       for (const content of this.ast) {
         BlockRenderer[content.type](content.content)
@@ -22,7 +23,7 @@ class Blockquote implements BlockquoteProps {
     }
   }
 
-  dlightMarkitBlockquoteStyle$ = css`
+  dlightMarkitBlockquote = css`
     padding: 4px 0 4px 18px;
     border-left: solid 3px gray;
     margin: 4px 0;

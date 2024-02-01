@@ -1,6 +1,5 @@
 import { View } from "@dlightjs/dlight"
 import { li, ul, type Typed, type Pretty, type ContentProp, Content, Prop, required } from "@dlightjs/types"
-import { css } from "@iandx/easy-css"
 import BlockRenderer from "."
 import InlineRenderer from "../inlineView"
 
@@ -17,11 +16,11 @@ class UnorderedList implements UnorderedListProps {
 
   View() {
     ul()
-      .class(this.dlightMarkitUnorderedListUl$)
+      .class("dlight-markit-unordered-list-ul")
     {
       for (const { content, item: itemList } of this.ast) {
         li()
-          .class(this.dlightMarkitUnorderedListLi$)
+          .class("dlight-markit-unordered-list-li")
         {
           for (const item of itemList) {
             InlineRenderer[item.type](item.content)
@@ -35,10 +34,6 @@ class UnorderedList implements UnorderedListProps {
       }
     }
   }
-
-  dlightMarkitUnorderedListUl$ = css``
-
-  dlightMarkitUnorderedListLi$ = css``
 }
 
 export default UnorderedList as Pretty as Typed<UnorderedListProps>

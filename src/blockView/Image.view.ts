@@ -1,6 +1,7 @@
 import { View } from "@dlightjs/dlight"
 import { a, type ContentProp, div, img, type Pretty, type Typed, Content, Prop, required } from "@dlightjs/types"
-import { css } from "@iandx/easy-css"
+import { css } from "@emotion/css"
+import clsx from "clsx"
 
 interface ImageProps {
   ast: ContentProp
@@ -15,7 +16,7 @@ class Image implements ImageProps {
   alt = this.props.altContent
   title = this.props.title
   zoomSize = this.props.zoomSize
-  alignment = this.props.alignment
+  alignment: "left" | "center" | "right" = this.props.alignment
   linkUrl = this.props.linkUrl
 
   margins = {
@@ -26,40 +27,42 @@ class Image implements ImageProps {
 
   View() {
     div()
-      .class(this.dlightMarkitImageDiv$(this.alignment))
+      .class(clsx(this.dlightMarkitImageDiv, "dlight-markit-image-div"))
     {
       if (this.linkUrl) {
         a()
           .href(this.linkUrl)
-          .class(this.dlightMarkitImageA$)
+          .class(clsx(this.dlightMarkitImageA, "dlight-markit-image-a"))
         {
           img()
             .src(this.imageUrl)
             .alt(this.alt)
             .title(this.title)
-            .class(this.dlightMarkitImage$)
+            .class(clsx(this.dlightMarkitImage, "dlight-markit-image"))
         }
       } else {
         img()
           .src(this.imageUrl)
           .alt(this.alt)
           .title(this.title)
-          .class(this.dlightMarkitImage$)
+          .class(clsx(this.dlightMarkitImage, "dlight-markit-image"))
       }
     }
   }
 
-  dlightMarkitImageDiv$ = (marginType: "left" | "center" | "right") => css`
-    margin: ${this.margins[marginType]};
+  dlightMarkitImageDiv = css`
+    margin: ${this.margins[this.alignment]};
     width: ${this.zoomSize};
     height: ${this.zoomSize};
   `
 
-  dlightMarkitImage$ = css`
+  dlightMarkitImage = css`
     width: 100%;
   `
 
-  dlightMarkitImageA$ = css``
+  dlightMarkitImageA = css`
+    display: block;
+  `
 }
 
 export default Image as Pretty as Typed<ImageProps>

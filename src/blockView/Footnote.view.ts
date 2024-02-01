@@ -1,8 +1,9 @@
 import { View } from "@dlightjs/dlight"
 import { a, div, type Pretty, span, type Typed, type ContentProp, Content, Prop, required } from "@dlightjs/types"
-import { css } from "@iandx/easy-css"
+import { css } from "@emotion/css"
 import Markit from "@iandx/markit"
 import InlineRenderer from "../inlineView"
+import clsx from "clsx"
 
 interface FootnoteProps {
   ast: ContentProp
@@ -24,32 +25,32 @@ class Footnote implements FootnoteProps {
   View() {
     div()
       .id(`Markit-Footnote-${this.noteName}-${this.footnoteIdx}`)
-      .class(this.dlightMarkitFootNoteWrap$)
+      .class(clsx(this.dlightMarkitFootNoteWrap, "dlight-markit-footnote-wrap"))
     {
       span(`[${this.noteName}] `)
-        .class(this.dlightMarkitNoteName$)
+        .class(clsx(this.dlightMarkitNoteName, "dlight-markit-note-name"))
       for (const content of this.ast) {
         InlineRenderer[content.type](content.content)
       }
       for (const footnoteSup of this.footNoteSubTrees) {
         a("↩")
           .href(`#Markit-FootnoteSup-${this.noteName}-${footnoteSup.props.footnoteSupId}`)
-          .class(this.dlightMarkitFootNote$)
+          .class(clsx(this.dlightMarkitFootNote, "dlight-markit-footnote"))
       }
     }
   }
 
-  dlightMarkitFootNoteWrap$ = css`
+  dlightMarkitFootNoteWrap = css`
     font-size: small;
   `
 
-  dlightMarkitNoteName$ = css`
+  dlightMarkitNoteName = css`
     white-space: pre-wrap;
   `
 
-  dlightMarkitFootNote$ = css`
-      text-decoration: none;
-      color: gray;
+  dlightMarkitFootNote = css`
+    text-decoration: none;
+    color: gray;
   `
 }
 

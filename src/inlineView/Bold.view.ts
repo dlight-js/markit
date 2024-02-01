@@ -1,6 +1,5 @@
 import { View } from "@dlightjs/dlight"
 import { type Pretty, strong, type Typed, type ContentProp, Content, required } from "@dlightjs/types"
-import { css } from "@iandx/easy-css"
 import InlineRenderer from "."
 
 interface BoldProps {
@@ -12,15 +11,13 @@ class Bold implements BoldProps {
 
   View() {
     strong()
-      .class(this.dlightMarkitBold$)
+      .class("dlight-markit-bold")
     {
       for (const content of this.ast) {
         InlineRenderer[content.type](content.content)
       }
     }
   }
-
-  dlightMarkitBold$ = css``
 }
 
 export default Bold as Pretty as Typed<BoldProps>
